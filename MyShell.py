@@ -4,20 +4,20 @@ os.environ.setdefault("DJANGO_SETTINGS_MODEULE","learning_log.settings")
 import django
 django.setup()
 
-from learning_logs.model import Topic
+from Pizzas.model import Pizza
 
-topic= Topic.objects.all()
+Pizza= Pizza.objects.all()
 
-for topic in topics:
-    print("Topic ID:", topic.id, "Topic:", topic)
+for Pizza in Pizzas:
+    print("Pizza ID:", Pizza.id, "Pizza:", Pizza)
 
 
-t= Topic.objects.get(id=1)
+t= Pizza.objects.get(id=1)
 print(t.text)
 print(t.date_added)
 
-entries= t.entry_set.all()
+topping= t.toppings_set.all()
 
-for entry in entries:
-    print(entry)
+for toppings in topping:
+    print(toppings)
     
